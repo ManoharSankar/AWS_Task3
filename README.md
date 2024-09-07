@@ -64,3 +64,41 @@ Steps to create S3 Bucket
 
 		- Click on Create Bucket
 
+
+
+To set up an Application Load Balancer (ALB) in AWS, follow these steps:
+
+1. Create Target Group
+Open the AWS Management Console.
+Navigate to the EC2 Dashboard.
+Select Target Groups from the left-hand menu.
+Click on Create target group.
+Choose the target type: Instances, IP addresses, or Lambda function.
+Enter a name for your target group.
+Configure the protocol and port (e.g., HTTP, port 80).
+Configure the VPC and health check settings.
+Click Create.
+2. Create an Application Load Balancer (ALB)
+In the EC2 Dashboard, go to Load Balancers on the left-hand menu.
+Click on Create Load Balancer and select Application Load Balancer.
+Provide a name for your ALB.
+Choose the scheme (Internet-facing or internal) based on your use case.
+Select the IP address type (IPv4 or dual-stack).
+Choose at least two Availability Zones and their corresponding subnets.
+Under Security Groups, select an existing security group or create a new one to control traffic to the ALB.
+In the Listeners section, choose the protocol and port (usually HTTP or HTTPS).
+Click Next: Configure Routing.
+3. Configure Listeners and Routing
+Under Default action, choose Forward to and select the target group you created earlier.
+If needed, configure advanced routing features like path-based or host-based routing.
+Click Next: Register Targets.
+4. Register Targets
+Select the instances you want to register with the ALB from the target group.
+Click Include as pending below.
+Click Next: Review.
+5. Review and Create
+Review all your settings and configurations.
+Click Create to set up your ALB.
+6. Test the ALB
+After creating the ALB, note its DNS name from the AWS console.
+Use a browser or a tool like curl to send a request to the ALB's DNS name to verify that it is working as expected.
